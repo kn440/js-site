@@ -1,0 +1,38 @@
+$widthS1:1200px;
+$heightS1:75px;
+$widthS2:1201px;
+$heightS2:758px;
+$widthS3:1200px;
+$heightS3:none;
+$widthS4:1200px;
+$heightS4:none;
+
+
+$colorS2:#F1E4E6;
+$colorS3:#292F36;
+
+
+@mixin ParamWHM($w, $h, $ml, $mr, $mt, $mb) {
+    width: $w;
+    height: $h;
+    margin-left: $ml;
+    margin-right: $mr;
+    margin-top: $mt;
+    margin-bottom: $mb;
+}
+
+@mixin ParamText($c, $ff, $fs, $fw, $p, $ta) {
+    color: $c;
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+    position: $p;
+    text-align: $ta;
+}
+
+@mixin ParamPosition($p, $d, $jc, $ai) {
+    position: $p;
+    display: $d;
+    justify-content: $jc;
+    align-items: $ai;
+}

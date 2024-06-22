@@ -1,0 +1,177 @@
+        @import 'vars';
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        summary {
+            display: block;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none
+        }
+        
+        .body {
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .center {
+            padding-left: calc(35% - 570px);
+            padding-right: calc(35% - 570px);
+        }
+        
+        .header {
+            @include ParamWHM($widthS1, $heightS1,  none, none,69px, 69px);
+            min-height: 75px;
+            background: #fff;
+            @include ParamPosition(none, flex, space-between, center);
+            flex-direction: row;
+            flex-wrap: wrap;
+            &__left {
+                
+                display: flex;
+                align-items: center;
+                gap: 41px;
+                &__img{
+                    
+                height: 50px;
+                }
+            }
+            &__right {
+                display: flex;
+                gap: 33px;
+                &__link{@include ParamText(#292F36, Jost, 20px, 900, none, none);}
+                
+            }
+        }
+        
+        .s2container {
+            background-color: $colorS2;
+            @include ParamWHM($widthS2, $heightS2, none, none, none, none);
+            @include ParamPosition(none, flex, space-between, none);
+            &__img {}
+            
+        }
+   
+        .s3container {
+            @include ParamWHM($widthS3, $heightS3, none, none, 100px, none);
+            @include ParamPosition(none, flex, center, none);
+            &__text {
+                &__title {
+                    @include ParamText($colorS3, Jost, 30px, 900, none, center);
+                }
+                &__subtitle {
+                    @include ParamText($colorS3, Jost, 14px, 400, none, none);
+                    margin-top: 3.3px;
+                }
+            }
+        }
+        
+        .s4container {
+            @include ParamWHM($widthS4, $heightS4, none, none, 30px, none);
+            display: grid;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            grid-template-columns: repeat(2, 549px);
+            grid-auto-flow: dense;
+            &__link {
+                &__text {
+                    @include ParamText(#222, Jost, 13px, 400, none, center);
+                    margin-top: 24px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+        @media (min-width: 426px) and (max-width: 770px) {
+            .header {
+                @include ParamWHM(769px, $heightS1, none, none, none, none);
+            }
+            .s2container {
+                background-color: $colorS2;
+                @include ParamWHM(769px, 368px, 0px, none, none, none);
+                &__text {
+                    @include ParamWHM(360px, 78px, none, 33px, 100px, none);
+                    &__title {
+                        @include ParamText(#222, Lato, 44px, 900, none, none);
+                    }
+                    &__subtitle {
+                        @include ParamText(#222, Lato, 24px, 700, none, none);
+                    }
+                }
+            }
+         
+            .s3container {
+                @include ParamWHM(769px, $heightS3, none, none, 50px, 50px);
+            }
+            .s4container {
+                @include ParamWHM(739px, $heightS4, 15px, 15px, 0px, none);
+                display: grid;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                grid-template-columns: repeat(2, 360px);
+                grid-auto-flow: dense;
+                &__link {
+                    &__text {
+                        @include ParamText(#222, Lato, 13px, 400, none, center);
+                        margin-top: 24px;
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+            
+        }
+        
+        @media screen and (max-width: 425px) {
+            .need-hide {
+                display: none;
+            }
+            .header {
+                width: 100vw;
+            }
+            .s2container {
+                @include ParamWHM(100vw, 363px, 0px, 0px, 0px, 0px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &__text {
+                    @include ParamWHM(none, 93px, none, 0px, 0px, none);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    &__title {
+                        @include ParamText(#222, Lato, 38px, 900, none, none);
+                    }
+                    &__subtitle {
+                        @include ParamText(#222, Lato, 20px, 700, none, none);
+                    }
+                }
+            }
+            .s3container {
+                @include ParamWHM(100vw, $heightS3, none, none, 50px, 50px);
+            }
+            .s4container {
+                @include ParamWHM(100vw, $heightS4, 15px, 15px, 0px, none);
+                display: grid;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                grid-template-columns: repeat(1, 100vw);
+                grid-auto-flow: dense;
+                &__link {
+                    &__img {
+                        width: 100vw;
+                    }
+                    &__text {
+                        @include ParamText(#222, Lato, 13px, 400, none, center);
+                        margin-top: 24px;
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+    
+        }
